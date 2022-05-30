@@ -1,0 +1,142 @@
+@import 'variables';
+@import 'breakpoints';
+@import 'spacings';
+.account {
+  .sidebar {
+    flex: .15;
+    height: 100%;
+    position: fixed;
+    overflow-y: auto;
+    left: 0;
+    transition: transform .5s;
+    z-index: 99;
+    .times { display: none }
+    .sidebar-item {
+      font-family: $font-family-1;
+      border-left: 2px solid transparent;
+      .icon { font-size: 1.5em; }
+      &:hover, &.active {
+        border-left: 2px solid $white;
+        background: rgba(255, 255, 255, 0.33)
+      }
+    }
+    @include media-breakpoint-only(md) {
+      &:hover {
+        .sidebar-item {
+          span { display: inline-block }
+        }
+      }
+      .store, .sidebar-item span { 
+        display: none;
+      }
+    }
+    @include media-breakpoint-down(md) {
+      .store { 
+        display: none;
+      }
+    }
+    @include media-breakpoint-down(sm) {
+      transform: translateX(-100%);
+      &.toggle { transform: translateX(0); }
+      .times { display: inline-block; }
+    }
+  };
+  .wrapper {
+    flex: 1;
+    flex-basis: 100%;
+    width: 100%;
+    margin-left: 180px;
+    @include media-breakpoint-only(md) { margin-left: 70px; }
+    @include media-breakpoint-down(sm) { margin-left: 0; }
+    > .main {
+     width: 100%;
+     max-width: 1200px;
+      > * { width: 100% }
+    }
+  };
+}
+// Horizontal-Navbar
+.greet {
+  @include media-breakpoint-down(sm) { font-size: 1em; }
+}
+
+@include media-breakpoint-up(md) { 
+  .bar { display: none }
+}
+
+// End of Horizontal-Navbar
+
+// Dashboard
+.summary {
+  > .d-flex .statement {
+    flex: 1;
+    @include media-breakpoint-down(sm) { min-width: 100%; }
+    @include media-breakpoint-down(xs) {
+      border-right: none;
+      border-bottom: $slim-border
+    }
+  }
+}
+
+.expenditure {
+  .indicator {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    &.green { background: $color1 };
+    &.orange { background: $orange };
+    + span { letter-spacing: 0.01em }
+  };
+}
+
+// Activity Section
+.activity {
+  .headings > *:not(.remark), .data-row > *:not(.remark) { flex: 1 }
+  .headings > .remark, .data-row > .remark {
+    flex: 3;
+    @include media-breakpoint-down(sm) { flex: 1 }
+  }
+  .ongoing {
+    color: $color1;
+  }
+}
+
+.name-title { 
+  flex: .2;
+  min-width: 100px;
+  @include media-breakpoint-down(sm) { flex: 1 }
+}
+
+.investment {
+  .thumbnail {
+    flex: .3;
+  }
+  .details {
+    flex: .7;
+  }
+}
+
+// deal section
+.single-deal {
+  .thumbnail {
+    max-width: 200px;
+    flex-basis: 200px;
+    > img {
+      width: 100%;
+      height: auto;
+    }
+    @include media-breakpoint-down(sm) {
+      max-width: 100%;
+      flex-basis: 100%;
+      margin-right: 0px;
+      margin-bottom: 16px;
+    }
+  }
+  @include media-breakpoint-down(sm) {
+    .flex-equal {
+      border: none;
+      margin-right: 0px;
+      padding: 0px;
+    }
+  }
+}

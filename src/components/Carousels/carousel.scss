@@ -1,0 +1,56 @@
+@import 'variables';
+@import 'breakpoints';
+
+.slider {
+  width: 100%;
+  &.padded-carousel {
+    #slide-right { right: .5%; };
+    #slide-left { left: .5% }
+    @include media-breakpoint-down(sm) {
+      #slide-right { right: .1%; };
+      #slide-left { left: .1% };
+      padding-right: 40px;
+      padding-left: 40px;
+    }
+  }
+}
+.slide {
+  transition: .5s all;
+}
+
+#slide-left,
+#slide-right {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+
+}
+
+#slide-left {
+  left: 3%;
+}
+
+#slide-right {
+  right: 3%;
+}
+
+.bullets {
+  position: absolute;
+  bottom: 15px;
+  left: 50%;
+  transform: translateX(-50%);
+  .bullet {
+    width: 10px;
+    height: 10px;
+    border: 1px solid #fff;
+    background: rgba(255, 255, 255, 0.808);
+    box-shadow: 1px 2px 3px #a0a0a0;
+    &.active {
+      background: $color1-opacity;
+      border: none;
+      box-shadow: none;
+    }
+  }
+}
+
+/*End of Carousel Styles*/

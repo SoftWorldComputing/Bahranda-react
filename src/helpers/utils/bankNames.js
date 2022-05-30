@@ -1,0 +1,25 @@
+const bankNames = [
+  "Access Bank Plc",
+  "Citibank Nigeria Limited ",
+ 	"Ecobank Nigeria Plc",
+  "Fidelity Bank Plc", 
+  "FIRST BANK NIGERIA LIMITED",
+ 	"First City Monument Bank Plc",
+ 	"Globus Bank Limited",
+ 	"Guaranty Trust Bank Plc",
+  "Heritage Banking Company Ltd.",
+ 	"Key Stone Bank",
+ 	"Polaris Bank",
+	"Providus Bank",
+ 	"Stanbic IBTC Bank Ltd.",
+ 	"Standard Chartered Bank Nigeria Ltd.",
+ 	"Sterling Bank Plc", 
+ 	"SunTrust Bank Nigeria Limited",
+ 	"Titan Trust Bank Ltd",
+ 	"Union Bank of Nigeria Plc",
+ 	"United Bank For Africa Plc",
+ 	"Unity Bank Plc",
+ 	"Wema Bank Plc", 
+ 	"Zenith Bank Plc" 
+]
+export default bankNames

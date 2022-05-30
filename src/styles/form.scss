@@ -1,0 +1,127 @@
+@import 'breakpoints';
+@import 'variables';
+.newsletter {
+  transform: translateY(-40%);
+  width: 400px;
+  input {
+    width: 100%;
+    background:  #F2FFF1;
+    border: 1px solid #F5FFFE;
+  }
+  @include media-breakpoint-down(sm) {
+    width: 100%;
+    margin: auto;
+  }
+}
+
+form {
+  width: 100%
+}
+
+.input-container {
+  width: 100%;
+  color: #2B2B2B;
+  font-family: $font-family-1;
+  input {
+    width: 100%;
+    &:not(.qty-input) { padding-right: 40px };
+    &::placeholder { 
+      color: rgba(0, 0, 0, 0.28);
+    }
+  }
+  .field-check-icon {
+    position: absolute;
+    right: 15px;
+    top: 25%;
+  }
+}
+
+input {
+  &:focus {
+    border-color: $color1;
+    color: $color1
+  }
+}
+
+.form-control {
+  width: 100%;
+  border-radius: 3px;
+  /* border: 2px solid #a0a0a0; */
+}
+
+textarea {
+  &::placeholder { font-size: 1.2em }
+  height: 200px;
+  width: 100%;
+  max-height: 50vh;
+  resize: none;
+}
+
+// Custom radio button
+.container {
+  display: block;
+  user-select: none;
+  &:hover input ~ .checkmark {
+    background-color: #ccc;
+  }
+  /* Hide the browser's default radio button */
+  input[type="radio"] {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    /* When the radio button is checked, add a blue background */
+    &:checked {
+      ~ .checkmark {
+        background-color: $color1;
+        /* Show the indicator (dot/circle) when checked */
+        &:after { display: block; }
+      }
+    }
+  }
+  /* Create a custom radio button */
+  .checkmark {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 0;
+    height: 14px;
+    width: 14px;
+    background-color: #eee;
+    /* Create the indicator (the dot/circle - hidden when not checked) */
+    &:after {
+      content: "";
+      position: absolute;
+      display: none;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 30%;
+      height: 30%;
+      border-radius: 50%;
+      background: white;
+    }
+  }
+}
+
+.input-dropdown {
+  position: absolute;
+  height: 0px;
+  display: none;
+  transition: max-height .5s ease-in;
+  box-shadow: 1px 2px 1px #a0a0a0;
+  top: 100%;
+  left: 0;
+  right: 0;
+  &.open {
+    height: auto;
+    display: block;
+  }
+}
+
+.pin-field {
+  flex: 1;
+  // max-width: 5px;
+  @include media-breakpoint-down(xs) {
+    max-width: 40px;
+  }
+}

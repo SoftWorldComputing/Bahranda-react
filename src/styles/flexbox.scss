@@ -1,0 +1,75 @@
+
+/* Flex Control*/
+.d-flex {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-flow: row wrap;
+}
+
+.d-inline-flex {
+  display: inline-flex;
+}
+
+.d-flex.nowrap {
+  flex-flow: nowrap;
+}
+
+.d-flex.column {
+  flex-direction: column;
+}
+
+.d-flex.align-items-center {
+  align-items: center;
+}
+
+.d-flex.align-items-end {
+  align-items: flex-end
+}
+
+.d-flex.align-items-stretch {
+  align-items: stretch
+}
+.d-flex.justify-content-s-between {
+  justify-content: space-between;
+}
+
+.d-flex.justify-items-self-start {
+  justify-items: self-start;
+}
+
+
+.d-flex.justify-content-s-evenly {
+  justify-content: space-evenly;
+}
+
+.d-flex.justify-content-center {
+  justify-content: center;
+}
+
+.d-flex.flex-center {
+  justify-content: center;
+  align-items: center
+}
+
+.d-flex.justify-content-end {
+  justify-content: flex-end;
+}
+
+.justify-self-end {
+  justify-self: flex-end;
+}
+
+.align-self-end {
+  align-self: flex-end;
+}
+
+.flex-equal {
+  flex: 1;
+}
+
+.col-2 {
+  width: 49%;
+}
+
+/*End of Flex Control*/

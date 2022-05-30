@@ -1,0 +1,52 @@
+@import 'breakpoints';
+@import 'variables';
+.modalRoot {
+  position: fixed;
+  top: 0;
+  right: 0;
+  background: #00000086;
+  width: 100vw;
+  height: 100vh;
+  z-index: 99;
+  transition: .5s all;
+  .modal {
+    width: auto;
+    max-height: 90vh;
+    z-index: 99;
+    overflow-y: auto;
+    overflow-x: hidden;
+    transition: all 0.5s ease-in;
+    &.active {
+      transform: translate(-50%, -50%) scale(1);
+      opacity: 1;
+    }
+    @include media-breakpoint-down(xs) {
+      width: 100%;
+      max-width: 90%;
+    }
+    
+  }
+}
+.modal-wrapper {
+  position: relative;
+}
+/*For MODAL COMPONENT*/
+
+.modal .close {
+  right: 20px;
+  color: var(--dark);
+  cursor: pointer;
+}
+
+.modal-content--btn,
+.modal .close {
+  position: absolute;
+  top: 10px;
+}
+.modal-content--btn {
+  left: 20px;
+}
+
+.modal > .close:hover {
+  color: var(--danger);
+}
